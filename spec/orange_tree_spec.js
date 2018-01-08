@@ -1,32 +1,37 @@
 describe("an orange tree", function() {
-  var tree;
+  var matureTree;
+  var immatureTree;
 
   beforeEach(function() {
     firstOrange = new Orange();
     secondOrange = new Orange();
     thirdOrange = new Orange();
-    tree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
+    matureTree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
+    immatureTree = new OrangeTree(5, 8)
+
   });
 
   it("has an age", function() {
-    expect(tree.age).toEqual(7)
+    expect(matureTree.age).toEqual(7)
   });
 
   it("has a height", function() {
-    expect(tree.height).toEqual(12)
+    expect(matureTree.height).toEqual(12)
   });
 
   it("has a collection of oranges", function() {
-    expect(tree.oranges).toEqual([firstOrange, secondOrange, thirdOrange])
+    expect(matureTree.oranges).toEqual([firstOrange, secondOrange, thirdOrange])
   });
 
   describe("reporting whether it's mature", function() {
-    
+
     it("is mature if it has reached fruit-bearing age", function() {
-      expect(tree.isMature()).toEqual(true)
+      expect(matureTree.isMature()).toEqual(true)
     });
 
-    it("is not mature if it has not reached fruit-bearing age");
+    it("is not mature if it has not reached fruit-bearing age", function() {
+      expect(immatureTree.isMature()).toEqual(false)
+    });
   });
 
   describe("reporting whether it's dead", function() {
