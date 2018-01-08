@@ -1,14 +1,15 @@
 describe("an orange tree", function() {
   var matureTree;
   var immatureTree;
+  var deadTree;
 
   beforeEach(function() {
     firstOrange = new Orange();
     secondOrange = new Orange();
     thirdOrange = new Orange();
     matureTree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
-    immatureTree = new OrangeTree(5, 8)
-
+    immatureTree = new OrangeTree(5, 8);
+    deadTree = new OrangeTree(200, 50)
   });
 
   it("has an age", function() {
@@ -35,7 +36,11 @@ describe("an orange tree", function() {
   });
 
   describe("reporting whether it's dead", function() {
-    it("is dead if it's reached the maximum age for an orange tree");
+    
+    it("is dead if it's reached the maximum age for an orange tree", function() {
+      expect(deadTree.isDead()).toEqual(true)
+    });
+
     it("is not dead if it's not reached the maximum age for an orange tree");
   });
 
