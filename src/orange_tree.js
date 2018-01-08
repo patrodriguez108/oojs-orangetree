@@ -25,4 +25,12 @@ OrangeTree.prototype.hasOranges = function() {
 	} else {
 		return false
 	};
+};
+
+OrangeTree.prototype.oneYearOlder = function() {
+	return this.age += 1
+};
+
+OrangeTree.prototype.passGrowingSeason = function() {
+	this.oneYearOlder()
 }
