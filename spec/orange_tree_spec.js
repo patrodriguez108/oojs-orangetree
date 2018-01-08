@@ -52,7 +52,9 @@ describe("an orange tree", function() {
       expect(matureTree.hasOranges()).toEqual(true)
     });
 
-    it("has no oranges if it's collection of oranges is empty");
+    it("has no oranges if it's collection of oranges is empty", function() {
+      expect(immatureTree.hasOranges()).toEqual(false)
+    });
   });
 
   describe("passing a growing season", function() {
