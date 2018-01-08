@@ -73,7 +73,10 @@ describe("an orange tree", function() {
       });
 
       describe("when the tree has reached the maximum height for an orange tree", function() {
-        it("does not grow");
+        it("does not grow", function() {
+          deadTree.passGrowingSeason();
+          expect(deadTree.height).toEqual(100)
+        });
       });
 
       describe("when it's mature", function() {
