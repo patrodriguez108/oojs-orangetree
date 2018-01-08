@@ -21,7 +21,11 @@ describe("an orange tree", function() {
   });
 
   describe("reporting whether it's mature", function() {
-    it("is mature if it has reached fruit-bearing age");
+    
+    it("is mature if it has reached fruit-bearing age", function() {
+      expect(tree.isMature()).toEqual(true)
+    });
+
     it("is not mature if it has not reached fruit-bearing age");
   });
 
