@@ -7,3 +7,14 @@ var OrangeTree = function(age, height, oranges = []) {
 OrangeTree.prototype.isMature = function() {
 	return this.age >= 7;
 };
+
+OrangeTree.prototype.isDead = function() {
+	this.stayDead();
+	return this.age >= 200;
+};
+
+OrangeTree.prototype.stayDead = function() {
+	if (this.age > 200) {
+		return this.age = 200;
+	};
+};
