@@ -2,10 +2,12 @@ describe("an orange tree", function() {
   var tree;
 
   beforeEach(function() {
-    tree = new OrangeTree();
+    tree = new OrangeTree(7, 12);
   });
 
-  it("has an age");
+  it("has an age", function() {
+    expect(tree.age).toEqual(7)
+  });
   it("has a height");
   it("has a collection of oranges");
 
