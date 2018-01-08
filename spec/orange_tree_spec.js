@@ -41,7 +41,9 @@ describe("an orange tree", function() {
       expect(deadTree.isDead()).toEqual(true)
     });
 
-    it("is not dead if it's not reached the maximum age for an orange tree");
+    it("is not dead if it's not reached the maximum age for an orange tree", function() {
+      expect(matureTree.isDead()).toEqual(false)
+    });
   });
 
   describe("reporting whether it has oranges", function() {
