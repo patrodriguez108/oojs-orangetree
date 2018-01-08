@@ -17,6 +17,7 @@ describe("an orange tree", function() {
   });
 
   it("has a height", function() {
+    console.log(matureTree)
     expect(matureTree.height).toEqual(12)
   });
 
@@ -59,7 +60,10 @@ describe("an orange tree", function() {
 
   describe("passing a growing season", function() {
     describe("when it's alive", function() {
-      it("gets older");
+      it("gets older", function() {
+        matureTree.passGrowingSeason();
+        expect(matureTree.age).toEqual(8);
+      });
 
       describe("when the tree is shorter than the maximum height for an orange tree", function() {
         it("grows taller");
