@@ -30,7 +30,7 @@ OrangeTree.prototype.maximumHeight = function() {
 };
 
 OrangeTree.prototype.stayMaxHeight = function() {
-	if (this.height > 100) {
+	if (this.height >= 100) {
 		return this.height = 100;
 	};
 }
@@ -49,4 +49,5 @@ OrangeTree.prototype.stayDead = function() {
 OrangeTree.prototype.passGrowingSeason = function() {
 	this.oneYearOlder();
 	this.oneFootTaller();
+	this.maximumHeight();
 }
