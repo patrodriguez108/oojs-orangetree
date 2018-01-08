@@ -8,7 +8,11 @@ describe("an orange tree", function() {
   it("has an age", function() {
     expect(tree.age).toEqual(7)
   });
-  it("has a height");
+
+  it("has a height", function() {
+    expect(tree.height).toEqual(12)
+  });
+  
   it("has a collection of oranges");
 
   describe("reporting whether it's mature", function() {
