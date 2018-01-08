@@ -18,3 +18,11 @@ OrangeTree.prototype.stayDead = function() {
 		return this.age = 200;
 	};
 };
+
+OrangeTree.prototype.hasOranges = function() {
+	if (this.oranges.length > 0) {
+		return true
+	} else {
+		return false
+	};
+}
