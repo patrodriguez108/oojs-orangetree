@@ -9,7 +9,7 @@ describe("an orange tree", function() {
     thirdOrange = new Orange();
     matureTree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
     immatureTree = new OrangeTree(5, 8);
-    deadTree = new OrangeTree(200, 50)
+    deadTree = new OrangeTree(200, 100)
   });
 
   it("has an age", function() {
@@ -66,7 +66,10 @@ describe("an orange tree", function() {
       });
 
       describe("when the tree is shorter than the maximum height for an orange tree", function() {
-        it("grows taller");
+        it("grows taller", function() {
+          matureTree.passGrowingSeason();
+          expect(matureTree.height).toEqual(13)
+        });
       });
 
       describe("when the tree has reached the maximum height for an orange tree", function() {
