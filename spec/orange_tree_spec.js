@@ -2,7 +2,10 @@ describe("an orange tree", function() {
   var tree;
 
   beforeEach(function() {
-    tree = new OrangeTree(7, 12);
+    firstOrange = new Orange();
+    secondOrange = new Orange();
+    thirdOrange = new Orange();
+    tree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
   });
 
   it("has an age", function() {
@@ -12,8 +15,10 @@ describe("an orange tree", function() {
   it("has a height", function() {
     expect(tree.height).toEqual(12)
   });
-  
-  it("has a collection of oranges");
+
+  it("has a collection of oranges", function() {
+    expect(tree.oranges).toEqual([firstOrange, secondOrange, thirdOrange])
+  });
 
   describe("reporting whether it's mature", function() {
     it("is mature if it has reached fruit-bearing age");
