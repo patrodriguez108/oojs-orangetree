@@ -27,33 +27,33 @@ describe("an orange tree", function() {
   describe("reporting whether it's mature", function() {
 
     it("is mature if it has reached fruit-bearing age", function() {
-      expect(matureTree.isMature()).toEqual(true)
+      expect(matureTree.isMature()).toBe(true)
     });
 
     it("is not mature if it has not reached fruit-bearing age", function() {
-      expect(immatureTree.isMature()).toEqual(false)
+      expect(immatureTree.isMature()).toBe(false)
     });
   });
 
   describe("reporting whether it's dead", function() {
     
     it("is dead if it's reached the maximum age for an orange tree", function() {
-      expect(deadTree.isDead()).toEqual(true)
+      expect(deadTree.isDead()).toBe(true)
     });
 
     it("is not dead if it's not reached the maximum age for an orange tree", function() {
-      expect(matureTree.isDead()).toEqual(false)
+      expect(matureTree.isDead()).toBe(false)
     });
   });
 
   describe("reporting whether it has oranges", function() {
     
     it("has oranges if it's collection of oranges is not empty", function() {
-      expect(matureTree.hasOranges()).toEqual(true)
+      expect(matureTree.hasOranges()).toBe(true)
     });
 
     it("has no oranges if it's collection of oranges is empty", function() {
-      expect(immatureTree.hasOranges()).toEqual(false)
+      expect(immatureTree.hasOranges()).toBe(false)
     });
   });
 
