@@ -22,12 +22,19 @@ OrangeTree.prototype.hasOranges = function() {
 
 OrangeTree.prototype.growTaller = function() {
 	if (!this.maxHeight()) {
-		return this.height += 2.5
-	}
+		return this.height += 2.5;
+	};
+	this.stayMaxHeight();
 };
 
 OrangeTree.prototype.maxHeight = function() {
-	return this.height === 25
+	return this.height === 25;
+};
+
+OrangeTree.prototype.stayMaxHeight = function() {
+	if (this.height >= 25) {
+		this.height = 25;
+	};
 };
 
 OrangeTree.prototype.isDead = function() {
