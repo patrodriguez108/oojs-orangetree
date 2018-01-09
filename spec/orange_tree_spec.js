@@ -9,7 +9,7 @@ describe("an orange tree", function() {
     thirdOrange = new Orange();
     matureTree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
     immatureTree = new OrangeTree(5, 8);
-    deadTree = new OrangeTree(200, 100)
+    deadTree = new OrangeTree(100, 25)
   });
 
   it("has an age", function() {
@@ -17,7 +17,6 @@ describe("an orange tree", function() {
   });
 
   it("has a height", function() {
-    console.log(matureTree)
     expect(matureTree.height).toEqual(12)
   });
 
@@ -68,33 +67,49 @@ describe("an orange tree", function() {
       describe("when the tree is shorter than the maximum height for an orange tree", function() {
         it("grows taller", function() {
           matureTree.passGrowingSeason();
-          expect(matureTree.height).toEqual(13)
+          expect(matureTree.height).toEqual(14.5)
         });
       });
 
       describe("when the tree has reached the maximum height for an orange tree", function() {
         it("does not grow", function() {
           deadTree.passGrowingSeason();
-          expect(deadTree.height).toEqual(100)
+          expect(deadTree.height).toEqual(25)
         });
       });
 
       describe("when it's mature", function() {
         it("produces oranges", function() {
           matureTree.passGrowingSeason();
-          expect(matureTree.oranges).toBeGreaterThan(70)
+          expect(matureTree.oranges.length).toBeGreaterThan(3)
         });
       });
 
       describe("when it's not mature", function() {
-        it("does not produce fruit");
+        it("does not produce fruit", function() {
+          immatureTree.passGrowingSeason();
+          expect(immatureTree.oranges.length).toEqual(0)
+        });
       });
     });
 
     describe("when it's dead", function() {
-      it("does not get older");
-      it("does not grow");
-      it("does not produce fruit");
+      
+      it("does not get older", function() {
+        deadTree.oneYearOlder();
+        expect(deadTree.age).toEqual(100)
+      });
+
+      it("does not grow", function() {
+        deadTree.growTaller();
+        expect(deadTree.height).toEqual(25)
+      });
+
+      it("does not produce fruit", function() {
+        deadTree.growOranges();
+        expect(deadTree.oranges.length).toEqual(0)
+      });
+
     });
   });
 

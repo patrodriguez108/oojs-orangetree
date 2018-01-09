@@ -5,7 +5,11 @@ var OrangeTree = function(age, height, oranges = []) {
 };
 
 OrangeTree.prototype.oneYearOlder = function() {
-	return this.age += 1;
+	if (!this.isDead()) {
+		return this.age += 1;
+	} else {
+		this.stayDead();
+	};
 };
 
 OrangeTree.prototype.isMature = function() {
@@ -13,11 +17,11 @@ OrangeTree.prototype.isMature = function() {
 };
 
 OrangeTree.prototype.growOranges = function() {
-	if (this.isMature()) {
-		for(var i = 0; i < Math.floor(Math.random() * (100 - 70) + 70); i++) {
+	for (var i = 1; i < Math.floor(Math.random() * (80 - 50) + 50); i++) {
+		if (this.isMature() && !this.isDead()) {
 			this.oranges.push(new Orange)
 		};
-	}
+	};
 };
 
 OrangeTree.prototype.hasOranges = function() {
@@ -28,35 +32,41 @@ OrangeTree.prototype.hasOranges = function() {
 	};
 };
 
-OrangeTree.prototype.oneFootTaller = function() {
-	return this.height += 1;
-}
-
-OrangeTree.prototype.maximumHeight = function() {
+OrangeTree.prototype.growTaller = function() {
+	if (!this.maxHeight() && !this.isDead()) {
+		return this.height += 2.5;
+	};
 	this.stayMaxHeight();
-	return this.height <= 100
+};
+
+OrangeTree.prototype.maxHeight = function() {
+	return this.height === 25;
 };
 
 OrangeTree.prototype.stayMaxHeight = function() {
-	if (this.height >= 100) {
-		return this.height = 100;
+	if (this.height >= 25) {
+		return this.height = 25;
 	};
-}
+};
 
 OrangeTree.prototype.isDead = function() {
-	this.stayDead();
-	return this.age >= 200;
+	return this.age >= 100;
 };
 
 OrangeTree.prototype.stayDead = function() {
-	if (this.age > 200) {
-		return this.age = 200;
+	if (this.age >= 100) {
+		return this.age = 100;
 	};
 };
 
 OrangeTree.prototype.passGrowingSeason = function() {
+	this.oranges = [];
 	this.oneYearOlder();
-	this.oneFootTaller();
-	this.maximumHeight();
+	this.growTaller();
 	this.growOranges();
+}
+
+OrangeTree.prototype.pickAnOrange = function() {
+	this.passGrowingSeason();
+	return this.oranges.shift();
 }
