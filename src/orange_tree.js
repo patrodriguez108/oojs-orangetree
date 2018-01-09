@@ -12,13 +12,6 @@ OrangeTree.prototype.isMature = function() {
 	return this.age >= 7;
 };
 
-// OrangeTree.prototype.growOranges = function() {
-// 	if (this.isMature()) {
-// 		for(var i = 0; i < Math.floor(Math.random() * (100 - 70) + 70); i++) {
-// 			this.oranges.push(new Orange)
-// 		};
-// 	}
-// };
 
 OrangeTree.prototype.hasOranges = function() {
 	if (this.oranges.length > 0) {
@@ -28,35 +21,18 @@ OrangeTree.prototype.hasOranges = function() {
 	};
 };
 
-// OrangeTree.prototype.oneFootTaller = function() {
-// 	return this.height += 1;
-// }
-
-// OrangeTree.prototype.maximumHeight = function() {
-// 	this.stayMaxHeight();
-// 	return this.height <= 100
-// };
-
-// OrangeTree.prototype.stayMaxHeight = function() {
-// 	if (this.height >= 100) {
-// 		return this.height = 100;
-// 	};
-// };
 
 OrangeTree.prototype.isDead = function() {
 	this.stayDead();
-	return this.age >= 200;
+	return this.age >= 100;
 };
 
 OrangeTree.prototype.stayDead = function() {
-	if (this.age > 200) {
-		return this.age = 200;
+	if (this.age > 100) {
+		return this.age = 100;
 	};
 };
 
 OrangeTree.prototype.passGrowingSeason = function() {
 	this.oneYearOlder();
-	this.oneFootTaller();
-	// this.maximumHeight();
-	// this.growOranges();
 }

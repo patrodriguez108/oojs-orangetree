@@ -9,7 +9,7 @@ describe("an orange tree", function() {
     thirdOrange = new Orange();
     matureTree = new OrangeTree(7, 12, [firstOrange, secondOrange, thirdOrange]);
     immatureTree = new OrangeTree(5, 8);
-    deadTree = new OrangeTree(200, 100)
+    deadTree = new OrangeTree(100, 25)
   });
 
   it("has an age", function() {
@@ -17,7 +17,6 @@ describe("an orange tree", function() {
   });
 
   it("has a height", function() {
-    console.log(matureTree)
     expect(matureTree.height).toEqual(12)
   });
 
@@ -65,26 +64,17 @@ describe("an orange tree", function() {
         expect(matureTree.age).toEqual(8);
       });
 
-      // describe("when the tree is shorter than the maximum height for an orange tree", function() {
-      //   it("grows taller", function() {
-      //     matureTree.passGrowingSeason();
-      //     expect(matureTree.height).toEqual(13)
-      //   });
-      // });
+      describe("when the tree is shorter than the maximum height for an orange tree", function() {
+        it("grows taller");
+      });
 
-      // describe("when the tree has reached the maximum height for an orange tree", function() {
-      //   it("does not grow", function() {
-      //     deadTree.passGrowingSeason();
-      //     expect(deadTree.height).toEqual(100)
-      //   });
-      // });
+      describe("when the tree has reached the maximum height for an orange tree", function() {
+        it("does not grow");
+      });
 
-      // describe("when it's mature", function() {
-      //   it("produces oranges", function() {
-      //     matureTree.passGrowingSeason();
-      //     expect(matureTree.oranges).toBeGreaterThan(70)
-      //   });
-      // });
+      describe("when it's mature", function() {
+        it("produces oranges");
+      });
 
       describe("when it's not mature", function() {
         it("does not produce fruit");
