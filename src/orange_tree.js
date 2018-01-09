@@ -12,7 +12,14 @@ OrangeTree.prototype.isMature = function() {
 	return this.age >= 7;
 };
 
-
+OrangeTree.prototype.growOranges = function() {
+	for (var i = 1; i < Math.floor(Math.random() * (80 - 50) + 50); i++) {
+		if (this.isMature() && !this.isDead()) {
+			this.oranges.push(new Orange)
+		};
+	};
+	console.log(this.oranges)
+};
 
 OrangeTree.prototype.hasOranges = function() {
 	if (this.oranges.length > 0) {
@@ -54,4 +61,5 @@ OrangeTree.prototype.passGrowingSeason = function() {
 	this.oranges = [];
 	this.oneYearOlder();
 	this.growTaller();
+	this.growOranges();
 }
