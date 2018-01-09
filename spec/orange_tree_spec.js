@@ -104,7 +104,12 @@ describe("an orange tree", function() {
         deadTree.growTaller();
         expect(deadTree.height).toEqual(25)
       });
-      it("does not produce fruit");
+
+      it("does not produce fruit", function() {
+        deadTree.growOranges();
+        expect(deadTree.oranges.length).toEqual(0)
+      });
+
     });
   });
 
