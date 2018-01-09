@@ -65,3 +65,8 @@ OrangeTree.prototype.passGrowingSeason = function() {
 	this.growTaller();
 	this.growOranges();
 }
+
+OrangeTree.prototype.pickAnOrange = function() {
+	this.passGrowingSeason();
+	return this.oranges.shift();
+}
