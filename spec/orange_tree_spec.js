@@ -99,7 +99,11 @@ describe("an orange tree", function() {
         deadTree.oneYearOlder();
         expect(deadTree.age).toEqual(100)
       });
-      it("does not grow");
+
+      it("does not grow", function() {
+        deadTree.growTaller();
+        expect(deadTree.height).toEqual(25)
+      });
       it("does not produce fruit");
     });
   });
