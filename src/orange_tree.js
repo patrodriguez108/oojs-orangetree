@@ -5,7 +5,11 @@ var OrangeTree = function(age, height, oranges = []) {
 };
 
 OrangeTree.prototype.oneYearOlder = function() {
-	return this.age += 1;
+	if (!this.isDead()) {
+		return this.age += 1;
+	} else {
+		this.stayDead();
+	};
 };
 
 OrangeTree.prototype.isMature = function() {
@@ -18,7 +22,6 @@ OrangeTree.prototype.growOranges = function() {
 			this.oranges.push(new Orange)
 		};
 	};
-	console.log(this.oranges)
 };
 
 OrangeTree.prototype.hasOranges = function() {
@@ -47,12 +50,11 @@ OrangeTree.prototype.stayMaxHeight = function() {
 };
 
 OrangeTree.prototype.isDead = function() {
-	this.stayDead();
 	return this.age >= 100;
 };
 
 OrangeTree.prototype.stayDead = function() {
-	if (this.age > 100) {
+	if (this.age >= 100) {
 		return this.age = 100;
 	};
 };
