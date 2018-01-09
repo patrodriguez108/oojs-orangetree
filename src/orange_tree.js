@@ -12,7 +12,6 @@ OrangeTree.prototype.isMature = function() {
 	return this.age >= 7;
 };
 
-
 OrangeTree.prototype.hasOranges = function() {
 	if (this.oranges.length > 0) {
 		return true
@@ -21,6 +20,9 @@ OrangeTree.prototype.hasOranges = function() {
 	};
 };
 
+OrangeTree.prototype.growTaller = function() {
+	return this.height += 2.5
+};
 
 OrangeTree.prototype.isDead = function() {
 	this.stayDead();
@@ -35,4 +37,5 @@ OrangeTree.prototype.stayDead = function() {
 
 OrangeTree.prototype.passGrowingSeason = function() {
 	this.oneYearOlder();
+	this.growTaller();
 }
