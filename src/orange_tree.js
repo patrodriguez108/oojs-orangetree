@@ -33,7 +33,7 @@ OrangeTree.prototype.hasOranges = function() {
 };
 
 OrangeTree.prototype.growTaller = function() {
-	if (!this.maxHeight()) {
+	if (!this.maxHeight() && !this.isDead()) {
 		return this.height += 2.5;
 	};
 	this.stayMaxHeight();
