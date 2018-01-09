@@ -86,7 +86,10 @@ describe("an orange tree", function() {
       });
 
       describe("when it's not mature", function() {
-        it("does not produce fruit");
+        it("does not produce fruit", function() {
+          immatureTree.passGrowingSeason();
+          expect(immatureTree.oranges.length).toEqual(0)
+        });
       });
     });
 
