@@ -65,7 +65,10 @@ describe("an orange tree", function() {
       });
 
       describe("when the tree is shorter than the maximum height for an orange tree", function() {
-        it("grows taller");
+        it("grows taller", function() {
+          matureTree.passGrowingSeason();
+          expect(matureTree.height).toEqual(14.5)
+        });
       });
 
       describe("when the tree has reached the maximum height for an orange tree", function() {
