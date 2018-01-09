@@ -94,7 +94,11 @@ describe("an orange tree", function() {
     });
 
     describe("when it's dead", function() {
-      it("does not get older");
+      
+      it("does not get older", function() {
+        deadTree.oneYearOlder();
+        expect(deadTree.age).toEqual(100)
+      });
       it("does not grow");
       it("does not produce fruit");
     });
