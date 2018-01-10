@@ -120,7 +120,11 @@ describe("an orange tree", function() {
         var orangePicked = matureTree.pickAnOrange();
         expect(orangePicked).toEqual(orangePicked)
       });
-      it("no longer has the returned orange in its collection of oranges");
+
+      it("no longer has the returned orange in its collection of oranges", function() {
+        var orangePicked = matureTree.pickAnOrange();
+        expect(matureTree.oranges.includes(orangePicked)).toBe(false)
+      });
     });
 
     describe("when the tree has no oranges", function() {
