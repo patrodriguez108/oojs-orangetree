@@ -128,7 +128,11 @@ describe("an orange tree", function() {
     });
 
     describe("when the tree has no oranges", function() {
-      it("returns undefined");
+
+      it("returns undefined", function() {
+        var notAnOrange = immatureTree.pickAnOrange();
+        expect(notAnOrange).toBe(undefined)
+      });
     });
   });
 });
