@@ -115,6 +115,7 @@ describe("an orange tree", function() {
 
   describe("picking an orange", function() {
     describe("when the tree has oranges", function() {
+      
       it("returns one of its oranges");
       it("no longer has the returned orange in its collection of oranges");
     });
